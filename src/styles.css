@@ -1,1 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+    --f-text: 'Open Sans', sans-serif;
+    --f-title: 'Righteous', cursive;
+
+    --c-purple: #9C2C77;
+    --c-red: #CD104D;
+    --c-orange-dark: #E14D2A;
+    --c-orange: #FD841F;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+html, body, p, a, label, span, button, input, label{
+    font-family: var(--f-text);
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--f-title);
+}
+
+body{
+    min-height: 100vh;
+    height: auto;
+}
+
+input{
+    padding: 10px;
+}
+
+button{
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: all .4s ease-in-out;
+}
+
+button:hover{
+    filter: brightness(80%);
+    transition: all .4s ease-in-out;
+}
