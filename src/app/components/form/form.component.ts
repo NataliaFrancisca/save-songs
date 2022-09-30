@@ -36,14 +36,13 @@ export class FormComponent implements OnInit {
   }
 
   checkInputs(): void{
-    this.validateInput(!this.nome, 'nome');
-    this.validateInput(!this.artista, 'artista');
-    this.validateInput(!this.album, 'album');
-    this.validateInput(!this.anoLancamento || this.anoLancamento > this.currentYear, 'anoLancamento');
+    const validateInput = (value: any, key: string) => value ? this.errorsForm[key] = true :  this.errorsForm[key] = false;
+    validateInput(!this.nome, 'nome');
+    validateInput(!this.artista, 'artista');
+    validateInput(!this.album, 'album');
+    validateInput(!this.anoLancamento || this.anoLancamento > this.currentYear, 'anoLancamento');
   }
-
-  validateInput = (value: any, key: string) => value ? this.errorsForm[key] = true :  this.errorsForm[key] = false;
-
+  
   validateForm(){
     const valuesErrors = Object.values(this.errorsForm);
 
@@ -64,5 +63,4 @@ export class FormComponent implements OnInit {
   }
 
   convertBoolean = (inputValue: string | boolean) => inputValue ? true : false;
-
 }
