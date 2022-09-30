@@ -3,38 +3,30 @@
     <label>
         Nome da Música: 
         <input type="text" name="name-song" [(ngModel)]="nome" name="nome" required/>
-        <span class="message-error" *ngIf="testeErrors.nomeError">Digite um nome válido</span>
+        <span class="message-error" *ngIf="errorsForm.nome">Digite um nome válido</span>
     </label>
 
     <label>
         Nome Artista: 
         <input type="text" name="name-artist" [(ngModel)]="artista" name="artista" required/>
-        <span class="message-error" *ngIf="testeErrors.artistaError">Digite um nome válido</span>
+        <span class="message-error" *ngIf="errorsForm.artista">Digite um nome válido</span>
     </label>
 
     <label>
         Nome Album: 
         <input type="text" name="name-album" [(ngModel)]="album" name="album" required/>
-        <span class="message-error" *ngIf="testeErrors.albumError">Digite um nome válido</span>
+        <span class="message-error" *ngIf="errorsForm.album">Digite um nome válido</span>
     </label>
 
     <label>
         Ano Lançamento: 
         <input type="text" name="year-release" [(ngModel)]="anoLancamento" name="anoLancamento"required />
-        <span class="message-error" *ngIf="testeErrors.anoLancamentoError">Digite um ano válido</span>
+        <span class="message-error" *ngIf="errorsForm.anoLancamento">Digite um ano válido</span>
     </label>
 
     <label>
         Favoritar Música: 
-        <span>
-            Sim 
-            <input type="radio" checked name="favorite-song" value="true" [(ngModel)]="favoritar" />
-        </span>
-
-        <span>
-            Não 
-            <input type="radio" name="favorite-song" value="false" [(ngModel)]="favoritar" />
-        </span>
+        <input type="checkbox" name="favorite-song" value="true" [(ngModel)]="favoritar" />
     </label>
 
     <button (click)="salvarDados()">Salvar</button>
