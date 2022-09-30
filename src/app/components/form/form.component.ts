@@ -18,18 +18,17 @@ export class FormComponent implements OnInit {
   @Input() anoLancamento!: number;
   @Input() favoritar!: boolean;
 
-  @Input() testeErrors: any = {
-    nomeError: false,
-    artistaError: false,
-    albumError: false,
-    anoLancamentoError: false,
-    favoritarError: false
+  @Input() errorsForm: any = {
+    nome: false,
+    artista: false,
+    album: false,
+    anoLancamento: false,
+    favoritar: false
   }
 
   constructor() {}
 
   ngOnInit(): void {}
-  convertBoolean = (inputValue: string | boolean) => inputValue == "true" ? true : false;
 
   salvarDados(){
     this.checkInputs();
@@ -37,15 +36,16 @@ export class FormComponent implements OnInit {
   }
 
   checkInputs(): void{
-    !this.nome ? this.testeErrors.nomeError = true : this.testeErrors.nomeError = false;
-    !this.artista ? this.testeErrors.artistaError = true : this.testeErrors.artistaError = false;
-    !this.album  ? this.testeErrors.albumError = true : this.testeErrors.albumError = false;
-    !this.anoLancamento || this.anoLancamento > this.currentYear ? this.testeErrors.anoLancamentoError = true : this.testeErrors.anoLancamentoError = false;
-    !this.favoritar ? this.testeErrors.favoritarError = true : this.testeErrors.favoritarError = false;
+    this.validateInput(!this.nome, 'nome');
+    this.validateInput(!this.artista, 'artista');
+    this.validateInput(!this.album, 'album');
+    this.validateInput(!this.anoLancamento || this.anoLancamento > this.currentYear, 'anoLancamento');
   }
 
+  validateInput = (value: any, key: string) => value ? this.errorsForm[key] = true :  this.errorsForm[key] = false;
+
   validateForm(){
-    const valuesErrors = Object.values(this.testeErrors);
+    const valuesErrors = Object.values(this.errorsForm);
 
     const musicaInput: Musica = {
       nome: this.nome,
@@ -62,5 +62,7 @@ export class FormComponent implements OnInit {
       this.newItemEvent.emit(musicaInput);
     }
   }
+
+  convertBoolean = (inputValue: string | boolean) => inputValue ? true : false;
 
 }
