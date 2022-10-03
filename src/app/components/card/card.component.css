@@ -1,28 +1,27 @@
 article{
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
 
     width: 100%;
-
     border-radius: 4px;
 }
 
 article img{
     width: 100%;
-    height: 40%;
+    height: 260px;
     display: block;
     object-fit: cover;
+    border-radius: 4px 4px 0 0;
 }
 
 section{
-    background-color: var(--c-primary-color);
-    padding: 8px 4px;
-    border-radius: 4px;
+    background-color: #E9DAC1;
+    padding: 8px 10px;
+    border-radius:4px;
 }
 
 .line{
-    margin: 4px 0;
+    margin: 2px 0;
 }
 
 /* DETAILS ABOUT THE SONG */
@@ -30,8 +29,7 @@ section{
     display: flex;
     align-items: center;
     padding: 10px 4px;
-    gap: 4px;
-    /* background-color: gainsboro; */
+    gap: 6px;
     background-color: var(--c-secondary-color);
     border-radius: 4px;
 }
@@ -53,7 +51,7 @@ section{
 }
 
 .details-about-song div span{
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 
 /* ABOUT THE ALBUM */
@@ -66,7 +64,11 @@ section{
 }
 
 .details-about-album span{
-    font-size: 1em;
+    font-size: 1.2em;
+}
+
+.material-symbols-outlined{
+    color: var(--c-red)
 }
 
 .material-symbols-outlined.fill {
