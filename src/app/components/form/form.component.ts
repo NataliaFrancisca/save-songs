@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { Musica } from 'src/app/interfaces/Musica';
 
+const urlRegex = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/;
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -39,11 +41,20 @@ export class FormComponent implements OnInit {
 
   checkInputs(): void{
     const validateInput = (value: boolean, key: string) => value ? this.errorsForm[key] = true :  this.errorsForm[key] = false;
+
     validateInput(!this.nome, 'nome');
     validateInput(!this.artista, 'artista');
     validateInput(!this.album, 'album');
-    validateInput(!this.url, 'url')
+    validateInput(!this.url || !urlRegex.test(this.url), 'url')
     validateInput(!this.anoLancamento || this.anoLancamento > this.currentYear || this.anoLancamento < 1800, 'anoLancamento');
+  }
+
+  cleanInputs(): void{
+    this.nome = "";
+    this.artista = "";
+    this.album = "";
+    this.url = "";
+    this.anoLancamento = this.currentYear;
   }
   
   validateForm(){
@@ -63,6 +74,7 @@ export class FormComponent implements OnInit {
     }else{
       alert('Tudo certo com o registro!')
       this.newItemEvent.emit(musicaInput);
+      this.cleanInputs();
     }
   }
 
