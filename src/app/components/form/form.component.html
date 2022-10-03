@@ -33,11 +33,8 @@
         <span class="message-error" *ngIf="errorsForm.url">Digite link válido</span>
     </label>
     
-    
-    <label class="input-type-checkbox">
-        Favoritar Música: 
-        <input type="checkbox" name="favorite-song" value="true" [(ngModel)]="favoritar" />
-    </label>
+    <input class="checkbox-effect checkbox-effect-1" type="checkbox" id="favorite-song" value="true" name="favorite-song" [(ngModel)]="favoritar"/>
+    <label for="favorite-song" class="input-type-checkbox">Favoritar Música</label>
 
     <button (click)="salvarDados()">Salvar</button>
 </form>
