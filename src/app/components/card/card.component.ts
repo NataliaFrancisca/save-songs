@@ -1,13 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Musica } from 'src/app/interfaces/Musica';
 
 @Component({
-  selector: 'app-card-song',
-  templateUrl: './card-song.component.html',
-  styleUrls: ['./card-song.component.css']
+  selector: 'app-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.css']
 })
-export class CardSongComponent implements OnInit {
-
+export class CardComponent implements OnInit {
   @Input() data: Musica = {
     nome: "",
     artista: "",

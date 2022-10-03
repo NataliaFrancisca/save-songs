@@ -5,17 +5,17 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormComponent } from './components/form/form.component';
-import { TableComponent } from './components/table/table.component';
-import { TemplateInitialPageComponent } from './components/template-initial-page/template-initial-page.component';
-import { CardSongComponent } from './components/card-song/card-song.component';
+import { ViewSongsComponent } from './components/view-songs/view-songs.component';
+import { CardComponent } from './components/card/card.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
-    TableComponent,
-    TemplateInitialPageComponent,
-    CardSongComponent
+    ViewSongsComponent,
+    CardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

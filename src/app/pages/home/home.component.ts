@@ -3,11 +3,11 @@ import { Musica } from 'src/app/interfaces/Musica';
 import { fakeData } from 'src/db/db';
 
 @Component({
-  selector: 'app-template-initial-page',
-  templateUrl: './template-initial-page.component.html',
-  styleUrls: ['./template-initial-page.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class TemplateInitialPageComponent implements OnInit {
+export class HomeComponent implements OnInit {
   musicas: Musica[] = [...fakeData];
 
   constructor() { }
@@ -20,5 +20,4 @@ export class TemplateInitialPageComponent implements OnInit {
     this.musicas.push(newItem);
     console.log(this.musicas)
   }
-
 }
