@@ -7,10 +7,10 @@ import { Musica } from 'src/app/interfaces/Musica';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
+  currentYear = new Date().getFullYear();
+
   @Output() updateDate: EventEmitter<any> = new EventEmitter();
   @Output() newItemEvent = new EventEmitter<any>();
-
-  currentYear = new Date().getFullYear();
 
   @Input() nome!:string;
   @Input() artista!: string;
@@ -36,11 +36,11 @@ export class FormComponent implements OnInit {
   }
 
   checkInputs(): void{
-    const validateInput = (value: any, key: string) => value ? this.errorsForm[key] = true :  this.errorsForm[key] = false;
+    const validateInput = (value: boolean, key: string) => value ? this.errorsForm[key] = true :  this.errorsForm[key] = false;
     validateInput(!this.nome, 'nome');
     validateInput(!this.artista, 'artista');
     validateInput(!this.album, 'album');
-    validateInput(!this.anoLancamento || this.anoLancamento > this.currentYear, 'anoLancamento');
+    validateInput(!this.anoLancamento || this.anoLancamento > this.currentYear || this.anoLancamento < 1800, 'anoLancamento');
   }
   
   validateForm(){
@@ -55,9 +55,9 @@ export class FormComponent implements OnInit {
     }
 
     if(valuesErrors.some((value) => value == true)){
-      alert('Algo de errado no Registro, tente novamente!')
+      alert('Algo de errado no registro, tente novamente!')
     }else{
-      alert('Tudo certo com o Registro!')
+      alert('Tudo certo com o registro!')
       this.newItemEvent.emit(musicaInput);
     }
   }
