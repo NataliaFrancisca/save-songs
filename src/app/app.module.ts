@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './components/form/form.component';
 import { TableComponent } from './components/table/table.component';
 import { TemplateInitialPageComponent } from './components/template-initial-page/template-initial-page.component';
+import { CardSongComponent } from './components/card-song/card-song.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
     TableComponent,
-    TemplateInitialPageComponent
+    TemplateInitialPageComponent,
+    CardSongComponent
   ],
   imports: [
     BrowserModule,

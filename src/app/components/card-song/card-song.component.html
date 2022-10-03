@@ -1,0 +1,22 @@
+<article>
+    <img src="https://i.scdn.co/image/ab67616d0000b2739ba77e3ca38205c4dbfc5e8b" />
+
+    <section>
+        <div class="line details-about-song">
+            <span class="material-symbols-outlined fill data.favoritar" *ngIf="data.favoritar; else isNotFavorite">favorite</span>
+            <ng-template #isNotFavorite>
+                <span class="material-symbols-outlined" *ngIf="!data.favoritar">favorite</span>
+            </ng-template>
+ 
+            <div>
+                <h1>{{data.nome}}</h1>
+                <span>{{data.artista}}</span>
+            </div>
+        </div>
+
+        <div class="line details-about-album">
+            <h3>{{data.album}}</h3>
+            <span>{{data.anoLancamento}}</span>
+        </div>
+    </section>
+</article>
