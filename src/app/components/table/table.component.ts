@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Musica } from 'src/app/interfaces/Musica';
 
 @Component({
   selector: 'app-table',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
+  @Input() musicas: Array<Musica> = [];
 
   constructor() { }
 
   ngOnInit(): void {
+
+    console.log("aqui no filho", this.musicas)
   }
 
 }
