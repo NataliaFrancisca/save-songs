@@ -1,5 +1,6 @@
-<form id="form">
+<form>
     <legend>Salve as músicas que você gosta:</legend>
+
     <label>
         Nome da Música: 
         <input type="text" name="name-song" [(ngModel)]="nome" name="nome" required/>
@@ -12,19 +13,22 @@
         <span class="message-error" *ngIf="errorsForm.artista">Digite um nome válido</span>
     </label>
 
-    <label>
-        Nome Album: 
-        <input type="text" name="name-album" [(ngModel)]="album" name="album" required/>
-        <span class="message-error" *ngIf="errorsForm.album">Digite um nome válido</span>
-    </label>
-
-    <label>
-        Ano Lançamento: 
-        <input type="text" name="year-release" [(ngModel)]="anoLancamento" name="anoLancamento"required />
-        <span class="message-error" *ngIf="errorsForm.anoLancamento">Digite um ano válido</span>
-    </label>
-
-    <label>
+    <section class="line-form">
+        <label>
+            Nome Album: 
+            <input type="text" name="name-album" [(ngModel)]="album" name="album" required/>
+            <span class="message-error" *ngIf="errorsForm.album">Digite um nome válido</span>
+        </label>
+    
+        <label>
+            Ano Lançamento: 
+            <input type="text" name="year-release" [(ngModel)]="anoLancamento" name="anoLancamento"required />
+            <span class="message-error" *ngIf="errorsForm.anoLancamento">Digite um ano válido</span>
+        </label>
+    </section>
+    
+    
+    <label class="input-type-checkbox">
         Favoritar Música: 
         <input type="checkbox" name="favorite-song" value="true" [(ngModel)]="favoritar" />
     </label>
