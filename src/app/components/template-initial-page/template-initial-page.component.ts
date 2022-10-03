@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Musica } from 'src/app/interfaces/Musica';
+import { fakeData } from 'src/db/db';
 
 @Component({
   selector: 'app-template-initial-page',
@@ -7,8 +8,7 @@ import { Musica } from 'src/app/interfaces/Musica';
   styleUrls: ['./template-initial-page.component.css']
 })
 export class TemplateInitialPageComponent implements OnInit {
-  musicas: Musica[] = [];
-
+  musicas: Musica[] = [...fakeData];
 
   constructor() { }
 
