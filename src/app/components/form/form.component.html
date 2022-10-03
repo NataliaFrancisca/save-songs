@@ -23,7 +23,7 @@
         <label>
             Ano Lançamento: 
             <input type="text" name="year-release" [(ngModel)]="anoLancamento" name="anoLancamento"required />
-            <span class="message-error" *ngIf="errorsForm.anoLancamento">Digite um ano válido</span>
+            <span class="message-error" *ngIf="errorsForm.anoLancamento">Digite um ano válido (1800 - {{currentYear}})</span>
         </label>
     </section>
     
