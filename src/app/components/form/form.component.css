@@ -1,5 +1,5 @@
 :host{
-    width: 56%;
+    width: 100%;
 
     display: flex;
     align-items: center;
@@ -21,6 +21,16 @@ form{
     border: solid black 4px;
 }
 
+form .line-form{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+form .line-form label{
+    width: 48%;
+}
+
 form legend{
     font-size: 2em;
     font-weight: 600;
@@ -28,12 +38,9 @@ form legend{
 }
 
 form label{
-    font-size: 1.6em;
-}
-
-form label{
-    margin: 10px 0;
+    margin: 6px 0;
     font-weight: 600;
+    font-size: 1.6em;
 }
 
 form input {
@@ -59,11 +66,20 @@ form button{
     font-family: var(--f-title);
 }
 
-
 form .message-error{
     font-size: .8em;
     background-color: var(--c-red);
     padding: 2px 6px;
     border-radius: 4px;
     color: white;
+}
+
+form .input-type-checkbox{
+    display: flex;
+    align-items: center;
+}
+
+form .input-type-checkbox input{
+    margin: 0px;
+    margin-left: 10px;
 }
