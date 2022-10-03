@@ -3,13 +3,13 @@
 
     <section>
         <div class="line details-about-song">
-            <span class="material-symbols-outlined fill data.favoritar" *ngIf="data.favoritar; else isNotFavorite">favorite</span>
+            <span class="material-symbols-outlined fill" *ngIf="data.favoritar; else isNotFavorite">favorite</span>
             <ng-template #isNotFavorite>
                 <span class="material-symbols-outlined" *ngIf="!data.favoritar">favorite</span>
             </ng-template>
  
             <div>
-                <h1>{{data.nome}}</h1>
+                <a target="_blank" [attr.href]="data.url">{{data.nome}}</a>
                 <span>{{data.artista}}</span>
             </div>
         </div>

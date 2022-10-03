@@ -15,6 +15,7 @@ export class FormComponent implements OnInit {
   @Input() nome!:string;
   @Input() artista!: string;
   @Input() album!: string;
+  @Input() url!: string;
   @Input() anoLancamento!: number;
   @Input() favoritar!: boolean;
 
@@ -22,6 +23,7 @@ export class FormComponent implements OnInit {
     nome: false,
     artista: false,
     album: false,
+    url: false,
     anoLancamento: false,
     favoritar: false
   }
@@ -40,6 +42,7 @@ export class FormComponent implements OnInit {
     validateInput(!this.nome, 'nome');
     validateInput(!this.artista, 'artista');
     validateInput(!this.album, 'album');
+    validateInput(!this.url, 'url')
     validateInput(!this.anoLancamento || this.anoLancamento > this.currentYear || this.anoLancamento < 1800, 'anoLancamento');
   }
   
@@ -51,6 +54,7 @@ export class FormComponent implements OnInit {
       artista: this.artista,
       album: this.album,
       anoLancamento: this.anoLancamento,
+      url: this.url,
       favoritar: this.convertBoolean(this.favoritar)
     }
 

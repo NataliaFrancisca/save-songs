@@ -26,6 +26,12 @@
             <span class="message-error" *ngIf="errorsForm.anoLancamento">Digite um ano válido (1800 - {{currentYear}})</span>
         </label>
     </section>
+
+    <label>
+        Link Música: 
+        <input type="text" name="url-musica" [(ngModel)]="url" name="url" required/>
+        <span class="message-error" *ngIf="errorsForm.url">Digite link válido</span>
+    </label>
     
     
     <label class="input-type-checkbox">

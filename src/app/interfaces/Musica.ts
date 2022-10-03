@@ -3,5 +3,6 @@ export interface Musica{
     artista: string,
     album: string,
     anoLancamento: number,
+    url: string,
     favoritar: boolean
 }

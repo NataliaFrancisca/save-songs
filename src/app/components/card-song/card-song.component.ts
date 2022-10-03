@@ -13,6 +13,7 @@ export class CardSongComponent implements OnInit {
     artista: "",
     album: "",
     anoLancamento: 0,
+    url: "",
     favoritar: false
   };
 
