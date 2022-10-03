@@ -16,7 +16,7 @@ article img{
 }
 
 section{
-    background-color: gainsboro;
+    background-color: var(--c-primary-color);
     padding: 8px 4px;
     border-radius: 4px;
 }
@@ -31,12 +31,25 @@ section{
     align-items: center;
     padding: 10px 4px;
     gap: 4px;
-    background-color: var(--c-orange);
+    /* background-color: gainsboro; */
+    background-color: var(--c-secondary-color);
     border-radius: 4px;
 }
 
-.details-about-song div h1{
+.details-about-song div{
+    display: flex;
+    flex-direction: column;
+}
+
+.details-about-song div a{
     font-size: 1.8em;
+    color: black;
+    font-family: var(--f-title);
+    text-decoration: none;
+}
+
+.details-about-song div a:hover{
+    color: var(--c-primary-color);
 }
 
 .details-about-song div span{
