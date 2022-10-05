@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Musica } from 'src/app/interfaces/Musica';
-import { fakeData } from 'src/db/db';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +7,8 @@ import { fakeData } from 'src/db/db';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  musicas: Musica[] = [...fakeData];
+  localStorage = localStorage.getItem("musicas");
+  musicas: Musica[] = [...JSON.parse(this.localStorage!)];
 
   constructor() { }
 
@@ -16,8 +16,8 @@ export class HomeComponent implements OnInit {
   }
 
   onUpdateData(newItem: any){
-    console.log(newItem)
     this.musicas.push(newItem);
-    console.log(this.musicas)
+    localStorage.setItem("musicas", JSON.stringify(this.musicas));
   }
+
 }
