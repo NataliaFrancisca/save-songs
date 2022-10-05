@@ -44,15 +44,16 @@ section{
     color: black;
     font-family: var(--f-title);
     text-decoration: none;
+    transition: all .3s ease-out;
 }
 
 .details-about-song div a:hover{
-    transform: scale(1.1);
-    margin-left: 6px;
+    margin-left: 3px;
+    transition: all .3s ease-in;
 }
 
 .details-about-song div span{
-    font-size: 1.4em;
+    font-size: 1.3em;
 }
 
 /* ABOUT THE ALBUM */
