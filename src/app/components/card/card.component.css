@@ -15,7 +15,7 @@ article img{
 }
 
 section{
-    background-color: #E9DAC1;
+    background: var(--c-primary-color);
     padding: 8px 10px;
     border-radius:4px;
 }
@@ -47,7 +47,8 @@ section{
 }
 
 .details-about-song div a:hover{
-    color: var(--c-primary-color);
+    transform: scale(1.1);
+    margin-left: 6px;
 }
 
 .details-about-song div span{
@@ -61,6 +62,7 @@ section{
 
 .details-about-album h3{
     font-size: 1.4em;
+    letter-spacing: 2px;
 }
 
 .details-about-album span{
