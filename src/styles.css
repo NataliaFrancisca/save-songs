@@ -1,11 +1,12 @@
 :root{
     --f-text: 'Open Sans', sans-serif;
     --f-title: 'Righteous', cursive;
-
-    --c-purple: #9C2C77;
-    --c-red: #EB1D36;
+    
+    --c-primary-color: #1caee5;
     --c-secondary-color: #EAF6F6;
-    --c-primary-color: #54BAB9;
+    --c-tertiary-color: #4AC08F;
+    
+    --c-red: #EB1D36;
 }
 
 *{
@@ -30,6 +31,7 @@ h1, h2, h3, h4, h5, h6{
 body{
     min-height: 100vh;
     height: auto;
+    background-color: var(--c-secondary-color)
 }
 
 input{
