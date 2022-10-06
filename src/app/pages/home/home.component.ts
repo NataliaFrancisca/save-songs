@@ -7,17 +7,21 @@ import { Musica } from 'src/app/interfaces/Musica';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  localStorage = localStorage.getItem("musicas");
-  musicas: Musica[] = [...JSON.parse(this.localStorage!)];
+  musicas: Musica[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
+    const storage = localStorage.getItem("musicas");
+    if(!storage){
+      localStorage.setItem("musicas", JSON.stringify([]));
+    }else{
+      this.musicas.push(...JSON.parse(storage));
+    }
   }
 
   onUpdateData(newItem: any){
     this.musicas.push(newItem);
     localStorage.setItem("musicas", JSON.stringify(this.musicas));
   }
-
 }
