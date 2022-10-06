@@ -23,5 +23,3 @@ Esse projeto foi desenvolvido para treinar os conceitos básicos de Angular.
 ## Demonstração
 
 ![App Screenshot](https://firebasestorage.googleapis.com/v0/b/github-images-6c299.appspot.com/o/save%20songs.png?alt=media&token=d8df8c95-5c52-48c1-ac96-1bc27b19ce7e)
-
-🔗[Save Songs](https://jogo-memoria-nf.vercel.app/)
