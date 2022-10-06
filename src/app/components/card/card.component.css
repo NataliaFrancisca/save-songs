@@ -1,4 +1,4 @@
-article{
+/* article{
     display: flex;
     flex-direction: column;
 
@@ -12,12 +12,14 @@ article img{
     display: block;
     object-fit: cover;
     border-radius: 4px 4px 0 0;
-}
+} */
 
 section{
     background: var(--c-primary-color);
     padding: 8px 10px;
     border-radius:4px;
+    height: 100%;
+    width: 100%;
 }
 
 .line{
@@ -63,7 +65,10 @@ section{
 
 .details-about-album h3{
     font-size: 1.4em;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    word-wrap: break-word;
+    font-weight: 800;
+    font-family: var(--f-text);
 }
 
 .details-about-album span{
